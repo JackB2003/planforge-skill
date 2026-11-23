@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" role="img" aria-label="PlanForge loop: interview, draft, five critics review, you decide, then repeat until the round limit">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker>
+    <style>
+      text{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#0f172a}
+      .t{font-size:17px;font-weight:700}.s{font-size:13px;fill:#475569}.k{font-size:11px;font-weight:700;letter-spacing:.08em;fill:#64748b}
+      .box{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}.hot{fill:#fff4ee;stroke:#D97757;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="880" height="300" rx="16" fill="#f8fafc"/>
+  <g transform="translate(30,40)">
+    <rect class="box" width="180" height="120" rx="12"/><text class="k" x="16" y="28">1 · INTERVIEW</text>
+    <text class="t" x="16" y="58">8 quick questions</text><text class="s" x="16" y="82">App, goal, users, hosting,</text><text class="s" x="16" y="100">constraints, rounds</text>
+  </g>
+  <g transform="translate(250,40)">
+    <rect class="box" width="180" height="120" rx="12"/><text class="k" x="16" y="28">2 · DRAFT</text>
+    <text class="t" x="16" y="58">16-section plan</text><text class="s" x="16" y="82">Architecture to timeline,</text><text class="s" x="16" y="100">plus the AI build team</text>
+  </g>
+  <g transform="translate(470,40)">
+    <rect class="hot" width="180" height="120" rx="12"/><text class="k" x="16" y="28" style="fill:#D97757">3 · FIVE CRITICS</text>
+    <text class="t" x="16" y="58">Attack the plan</text><text class="s" x="16" y="82">Security, architecture, builder,</text><text class="s" x="16" y="100">operations, completeness</text>
+  </g>
+  <g transform="translate(690,40)">
+    <rect class="box" width="160" height="120" rx="12"/><text class="k" x="16" y="28">4 · YOU DECIDE</text>
+    <text class="t" x="16" y="58">Real trade-offs</text><text class="s" x="16" y="82">Clear fixes apply</text><text class="s" x="16" y="100">automatically</text>
+  </g>
+  <path d="M210 100H246" stroke="#64748b" stroke-width="2" marker-end="url(#a)" fill="none"/>
+  <path d="M430 100H466" stroke="#64748b" stroke-width="2" marker-end="url(#a)" fill="none"/>
+  <path d="M650 100H686" stroke="#64748b" stroke-width="2" marker-end="url(#a)" fill="none"/>
+  <path d="M770 160V226H340V164" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)" fill="none"/>
+  <text class="s" x="440" y="250" text-anchor="middle">Rewrite and repeat until no serious gaps remain, or your round limit (default 3)</text>
+</svg>
