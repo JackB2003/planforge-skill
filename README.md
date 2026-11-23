@@ -20,7 +20,7 @@ What the two rounds caught in that run:
 | Staging was promised but had no port, database, or budget | Defined a full staging setup |
 | The free email tier would silently stop all logins | Budgeted the paid plan and added a daily send cap |
 
-Round 2 then found second-order problems (for example, the content security policy would have blocked the bot-check widget on the login page). In this example the run was ended after round 2 with `/finalize`, so those findings are listed at the bottom of the plan instead of fixed. A normal run keeps going, up to 6 rounds.
+Round 2 then found second-order problems (for example, the content security policy would have blocked the bot-check widget on the login page). In this example the run was ended after round 2 with `/finalize`, so those findings are listed at the bottom of the plan instead of fixed. A normal run keeps going until the round limit you chose (default 3, at most 6). That example was made before the interview step existed.
 
 ## Install
 
@@ -35,7 +35,7 @@ Restart Claude Code. The skill is then available as `/planforge`.
 ## Use
 
 ```
-/planforge new "My App"          start a plan from a short description
+/planforge new "My App"          start a plan (begins with a short interview)
 /planforge import ./my-spec.md   critique and gap-fill a plan you already have
 /planforge resume my-app         pick up an unfinished plan
 /planforge show my-app           print the sections
@@ -47,16 +47,17 @@ Plans are saved as JSON (and a readable Markdown file when finalized) in `~/plan
 
 ## How a round works
 
-1. **Draft.** Claude writes all 16 sections: architecture, database, server, environment, features, navigation, authentication, integrations, security, QA testing, error logging, code health, deployment, budget, timeline, and the AI agent team that will build it.
-2. **Critique.** Five reviewers read the draft in fresh context, in parallel:
+1. **Interview.** For a new plan, Claude first asks seven short questions, one at a time, with suggested answers: what the app is, the goal, the users, the must-haves, constraints, what it must not do, and how many review rounds you want (default 3, up to 6). Your answers are shown to every critic, so they judge the plan against your real goal.
+2. **Draft.** Claude writes all 16 sections: architecture, database, server, environment, features, navigation, authentication, integrations, security, QA testing, error logging, code health, deployment, budget, timeline, and the AI agent team that will build it.
+3. **Critique.** Five reviewers read the draft in fresh context, in parallel:
    - Security Auditor (attacks it)
    - Systems Architect (checks it holds together from first principles)
    - Implementer (plays the build agent who has to follow it)
    - Ops/Reliability Engineer (checks it against how the stack really behaves in production)
    - Completeness Auditor (hunts for what is missing)
-3. **Judge.** Findings are merged. Clear fixes are applied automatically. Real judgment calls become questions for you.
-4. **Answer.** You answer one question at a time, with suggested options. You can skip, discuss with the critic who raised it, or finalize early.
-5. **Repeat** until no high-severity gaps remain, or the 6-round limit.
+4. **Judge.** Findings are merged. Clear fixes are applied automatically. Real judgment calls become questions for you.
+5. **Answer.** You answer one question at a time, with suggested options. You can skip, discuss with the critic who raised it, or finalize early.
+6. **Repeat** until no high-severity gaps remain, or the round limit you chose.
 
 ## Honest limits
 

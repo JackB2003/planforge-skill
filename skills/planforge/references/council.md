@@ -1,6 +1,6 @@
 # The Critic Council
 
-Five adversarial personas, spawned as five parallel `Agent` calls (`subagent_type: general-purpose`) every critique round. Each gets **only the current plan artifact** (all 16 sections, full JSON) — never the Planner/Synthesizer's reasoning, never prior rounds' critiques. This fresh-context isolation is what makes the critique sharp instead of self-congratulatory.
+Five adversarial personas, spawned as five parallel `Agent` calls (`subagent_type: general-purpose`) every critique round. Each gets **only the current plan artifact** (all 16 sections, full JSON) plus the plan's `interview` answers (app, goal, users, must-haves, constraints, must-not) so they can judge the plan against what the user actually wants — never the Planner/Synthesizer's reasoning, never prior rounds' critiques. This fresh-context isolation is what makes the critique sharp instead of self-congratulatory.
 
 Give each persona the plan, its mandate below, and this **exact output contract** (append it verbatim to every persona prompt):
 
