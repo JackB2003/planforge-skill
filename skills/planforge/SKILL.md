@@ -23,7 +23,7 @@ Plan file shape:
   "slug": "my-app",
   "project_name": "My App",
   "description": "the original description, or the full text of an imported source doc",
-  "interview": { "app": "...", "goal": "...", "users": "...", "must_haves": "...", "constraints": "...", "must_not": "..." },
+  "interview": { "app": "...", "goal": "...", "users": "...", "must_haves": "...", "hosting": "...", "constraints": "...", "must_not": "..." },
   "max_rounds": 3,
   "created_at": "ISO timestamp",
   "updated_at": "ISO timestamp",
@@ -75,17 +75,18 @@ Map the source document into the 16-section schema:
 
 ### Interview (`new` only)
 
-Before drafting anything, ask the user these seven questions (the six interview questions plus the round count), one at a time, in this order. Use `AskUserQuestion` with 2 to 4 suggested answers tailored to the app so far (the user can always type their own). If the user already gave a description, pre-fill what it answers and only confirm it ("I read this as X, is that right?") instead of asking from scratch.
+Before drafting anything, ask the user these eight questions (the seven interview questions plus the round count), one at a time, in this order. Use `AskUserQuestion` with 2 to 4 suggested answers tailored to the app so far (the user can always type their own). If the user already gave a description, pre-fill what it answers and only confirm it ("I read this as X, is that right?") instead of asking from scratch.
 
 1. **The app:** what is it, in a sentence?
 2. **The goal:** what should it achieve, and what does success look like?
 3. **The users:** who will use it?
 4. **Must-haves:** what must version one do?
-5. **Constraints:** budget, deadline, tools or hosting you already use, anything fixed?
-6. **Must not:** anything it must not do or include?
-7. **Rounds:** how many review rounds do you want? Offer 1, 2, 3 (default, recommended), 4 to 6. More rounds find more problems but cost more usage, since every round starts five subagents.
+5. **Hosting:** where will the app live? Offer: a server I already have (VPS or home server); a managed platform (Vercel, Netlify, Cloudflare, Render, Fly.io or similar); a big cloud (AWS, Google Cloud, Azure); app stores or a desktop or phone install; or "I don't know, recommend one". If the user does not know, pick the simplest option that fits the app and say why in the plan's `server` section. Do not assume the user owns a server.
+6. **Constraints:** budget, deadline, tools you already use, anything fixed?
+7. **Must not:** anything it must not do or include?
+8. **Rounds:** how many review rounds do you want? Offer 1, 2, 3 (default, recommended), 4 to 6. More rounds find more problems but cost more usage, since every round starts five subagents.
 
-Rules: `/skip` leaves a question unanswered (record "not specified" and let the Planner use sound judgment, marking those choices). `/done` stops the interview early; any unasked question is recorded as "not specified" and rounds default to 3. Record answers in the plan file's `interview` object as they come. Keep each question to one short line.
+Rules: `/skip` leaves a question unanswered (record "not specified" and let the Planner use sound judgment, marking those choices). `/done` stops the interview early; any unasked question is recorded as "not specified" and rounds default to 3. The chosen host shapes sections 3 (`server`), 4 (`environment`), 13 (`deployment`) and 14 (`budget`): adapt those sections to it instead of defaulting to a VPS with nginx and pm2 (see `references/sections.md`). Record answers in the plan file's `interview` object as they come. Keep each question to one short line.
 
 The interview answers are part of the plan's context: the Planner drafts from them, and the council receives them every round (see `references/council.md`) so critics judge the plan against the user's real goal and constraints.
 
