@@ -47,7 +47,7 @@ Plans are saved as JSON (and a readable Markdown file when finalized) in `~/plan
 
 ## How a round works
 
-1. **Interview.** For a new plan, Claude first asks seven short questions, one at a time, with suggested answers: what the app is, the goal, the users, the must-haves, constraints, what it must not do, and how many review rounds you want (default 3, up to 6). Your answers are shown to every critic, so they judge the plan against your real goal.
+1. **Interview.** For a new plan, Claude first asks eight short questions, one at a time, with suggested answers: what the app is, the goal, the users, the must-haves, where it will live (your own server, a managed platform such as Vercel or Cloudflare, a big cloud, an app store, or "recommend one"), constraints, what it must not do, and how many review rounds you want (default 3, up to 6). Your answers are shown to every critic, so they judge the plan against your real goal.
 2. **Draft.** Claude writes all 16 sections: architecture, database, server, environment, features, navigation, authentication, integrations, security, QA testing, error logging, code health, deployment, budget, timeline, and the AI agent team that will build it.
 3. **Critique.** Five reviewers read the draft in fresh context, in parallel:
    - Security Auditor (attacks it)

@@ -22,6 +22,8 @@ Every section follows this exact shape:
 - If content originates from an imported source document, preserve its real decisions and rationale faithfully. Only invent content where the source is genuinely silent, and when you do, prefix every `agent_notes` entry for that section with `[GAP-FILLED]`.
 - All 16 sections must be present, in order, every round — even sections nothing changed about get carried forward.
 
+**Adapt to the chosen host.** The `interview.hosting` answer decides what sections 3, 4, 13 and 14 describe. The field names below stay the same, but fill them with what is true for that host. For a managed platform (Vercel, Netlify, Cloudflare, Render, Fly.io), `server` describes the platform, plan, region and build settings, `ports`, `nginx_config_notes` and `pm2_processes` say "not applicable: managed by the platform" with the platform's real equivalent (for example serverless functions, build command, health check path), and `deployment` uses the platform's git-based deploys and rollbacks. For a big cloud, name the actual services. For an app store or desktop or phone install, describe the build and release pipeline instead of a server. Never assume the user owns a server. If the user did not know, recommend one and explain why in `server`.
+
 ## Section definitions and required `implementation` fields
 
 1. **`architecture`** — App Architecture Framework
