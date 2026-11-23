@@ -25,9 +25,9 @@ Round 2 then found second-order problems (for example, the content security poli
 ## Install
 
 ```bash
-git clone https://github.com/JackB2003/planforge.git
+git clone https://github.com/JackB2003/planforge-skill.git
 mkdir -p ~/.claude/skills
-cp -r planforge/skills/planforge ~/.claude/skills/
+cp -r planforge-skill/skills/planforge ~/.claude/skills/
 ```
 
 Restart Claude Code. The skill is then available as `/planforge`.
